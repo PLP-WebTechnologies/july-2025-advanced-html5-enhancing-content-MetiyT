@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced Form Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1rem;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header, main, footer {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h1, h2 {
+      color: #00539C;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    nav ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+    form {
+      margin-top: 2rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[readonly] {
+      background-color: #eee;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #00539C;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #003f6b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Enhanced Form Page</h1>
+    <nav>
+      <p>Explore these sections:</p>
+      <ul>
+        <li>Introduction & Media</li>
+        <li>Information Table</li>
+        <li>Registration Form</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Introduction & Media</h2>
+      <p>
+        This page demonstrates an enhanced HTML5 form with a well-structured layout
+        including lists, tables, and media to provide a rich user experience.
+      </p>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="A scenic mountain lake" />
+        <figcaption>Photo by David Clode on Unsplash</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="info-table-heading">
+      <h2 id="info-table-heading">Sample Information Table</h2>
+      <table>
+        <caption>Key Features of Our Service</caption>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>24/7 Support</td>
+            <td>Round-the-clock helpdesk and technical support.</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Mobile App</td>
+            <td>Access our services on your smartphone or tablet.</td>
+            <td>Coming Soon</td>
+          </tr>
+          <tr>
+            <td>Multi-language</td>
+            <td>Supports English, Spanish, French, and more.</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="registration-form-heading">
+      <h2 id="registration-form-heading">User Registration Form</h2>
+      <form action="#" method="post" novalidate>
+        <!-- Text Inputs -->
+        <label for="fullname">Full Name <span aria-hidden="true" style="color:red">*</span></label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="John Doe"
+          required
+          autocomplete="name"
+          aria-required="true"
+        />
+
+        <label for="email">Email Address <span aria-hidden="true" style="color:red">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="example@example.com"
+          required
+          autocomplete="email"
+          aria-required="true"
+        />
+
+        <label for="username">Username (readonly)</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value="user1234"
+          readonly
+          autocomplete="off"
+        />
+
+        <!-- Password -->
+        <label for="password">Password <span aria-hidden="true" style="color:red">*</span></label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Create a password"
+          required
+          minlength="8"
+          autocomplete="new-password"
+          aria-required="true"
+        />
+
+        <!-- Number -->
+        <label for="age">Age <span aria-hidden="true" style="color:red">*</span></label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="18"
+          min="13"
+          max="120"
+          required
+          autocomplete="off"
+          aria-required="true"
+        />
+
+        <!-- Date -->
+        <label for="dob">Date of Birth <span aria-hidden="true" style="color:red">*</span></label>
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          required
+          max="2008-12-31"
+          autocomplete="bday"
+          aria-required="true"
+          title="Please enter your date of birth (must be 13 or older)."
+        />
+
+        <!-- Radio Buttons -->
+        <fieldset>
+          <legend>Gender <span aria-hidden="true" style="color:red">*</span></legend>
+          <input type="radio" id="gender-m" name="gender" value="male" required />
+          <label for="gender-m">Male</label>
+
+          <input type="radio" id="gender-f" name="gender" value="female" />
+          <label for="gender-f">Female</label>
+
+          <input type="radio" id="gender-o" name="gender" value="other" />
+          <label for="gender-o">Other</label>
+        </fieldset>
+
+        <!-- Select Dropdown -->
+        <label for="country">Country <span aria-hidden="true" style="color:red">*</span></label>
+        <select id="country" name="country" required autocomplete="country" aria-required="true">
+          <option value="" disabled selected>Select your country</option>
+          <option value="us">United States</option>
+          <option value="ca">Canada</option>
+          <option value="uk">United Kingdom</option>
+          <option value="et">Ethiopia</option>
+          <option value="au">Australia</option>
+        </select>
+
+        <!-- Textarea -->
+        <label for="about">Tell us about yourself</label>
+        <textarea
+          id="about"
+          name="about"
+          rows="4"
+          placeholder="A few words about you..."
+          autocomplete="off"
+        ></textarea>
+
+        <!-- Checkbox -->
+        <fieldset>
+          <legend>Subscribe to newsletter?</legend>
+          <input type="checkbox" id="newsletter" name="newsletter" value="yes" />
+          <label for="newsletter">Yes, I want to receive updates.</label>
+        </fieldset>
+
+        <!-- Submit button -->
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Enhanced Form Demo. All rights reserved.</p>
+  </footer>
+</body>
+</html>
